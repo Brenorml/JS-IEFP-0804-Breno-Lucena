@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos em Javascript - Ficha 2</title>
+</head>
+
+<body>
+    <script>
+        const aluno = prompt("Insira o nome do aluno");
+        const genero = prompt("Insira o gênero do aluno(a) - (M/F)");
+        const nota1 = parseInt(prompt("Insira a nota 1;"));
+        const nota2 = parseInt(prompt("Insira a nota 2;"));
+        const nota3 = parseInt(prompt("Insira a nota 3;"));
+        let media = (nota1 + nota2 + nota3) / 3;
+        document.write(media >= 9.5 ? "Aluno aprovado<br>" : "Aluno reprovado<br>");
+        //if simples
+        if (media >= 9.5) {
+            document.write("<p style='color:green'> Aluno(a) " + aluno + " aprovado com media: " + media + "</p>");
+            document.write('Parabéns!!!'); //Sem as chavetas o Parabéns é impresso sem seguir a condição, ou seja, acima de 1 intrução precisa de chavetas.
+        }
+        document.write('<p style="color:blue"><b>O programa segue para a instrução a seguir ao if</b></p>');
+        //if com else
+        if (media >= 9.5)
+            document.write('<h3 style = "color:green">' + aluno + ' aprovado(a) com ' + media + ' valores</h3><img src = "rock.jpg" alt = "Rock!!!"><br>'); //é possível por a imagem dentro da tag
+        else
+            document.write('<h3 style = "color:red">' + aluno + ' reprovado(a) com ' + media + ' valores</h3>');
+
+        switch (genero) {
+            case 'F':
+                if (media >= 9.5){
+                    document.write('<h3 style = "color:green">' + aluno + ' aprovada com ' + media.toFixed(2) + ' valores</h3>"');
+                    document.write('<img src = "rock.jpg" alt = "Rock!!!"><br>');
+                }
+                else
+                    document.write('<h3 style = "color:red">' + aluno + ' reprovada com ' + media.toFixed(2) + ' valores</h3>');
+                break;
+            case 'M':
+            if (media >= 9.5){
+                    document.write('<h3 style = "color:green">' + aluno + ' aprovado com ' + media.toFixed(2) + ' valores</h3>"');
+                    document.write('<img src = "rock.jpg" alt = "Rock!!!"><br>');
+                }
+                else
+                    document.write('<h3 style = "color:red">' + aluno + ' reprovado com ' + media.toFixed(2) + ' valores</h3>');
+                break;
+            default: 
+                document.write("<p>Genero invalido!!!</p>");
+                break;
+        }
+    </script>
+</body>
+
+</html>

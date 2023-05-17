@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Título na Página</h1>
+    <p id="demo">Isto é um parágrafo</p>
+    <script>
+        document.write('Olá, bem vindos ao mundo da programação Javascript<br>');
+        //alert('Mensagem de alerta!');
+        console.log('Mensagem na consola nas ferramentas do Desenvolvedor - F12');
+        document.getElementById('demo').innerHTML = "isto é o JS a escrever";
+        var nome; //declaração muito permnissiva criando problemas  com declarações até 2015, quando inserido Let e Const
+        nome = "Breno"; //inicialização
+        document.write(nome + "<br>");
+        var nome1 = "Lucena"; //declaração com inicialização
+        document.write(nome1 + "<br>");
+        let nome2; //let são variáveis reatribuíveis
+        nome2 = "Ricardo";
+        document.write(nome2 + "<br>");
+        const nome3 = "Medeiros";
+        //nome3 = "Guarana"; <---- não é possível reatribuir uma constante
+        document.write(nome3 + "<br>");
+        document.write(nome1 + " " + nome2 + "<br>");
+        document.write(nome + " " + nome2 + "<br>");
+        document.write(nome + " " + nome2 + " " + nome3 + " " + nome2 + "<br>");
+        const num1 = parseInt(prompt("Escreva um numero qualquer"));
+        const num2 = parseInt(prompt("Escreva outro numero"));
+        //Necessario o método parseint pq o método prompt retorna string
+        let total = num1 + num2;
+        document.write("Total = " + total + "<br>");
+        document.write("Total de " + num1 + " total de " + num2 + " = " + (num1 + num2) + "<br>");
+        document.write((num1 + num2)+"<br>");
+        document.write("<br>O doces \"D\'Avó\"<br>");
+        const verdadeiro = true;
+        const falso = false;
+
+        const aluno = prompt("Insira o nome do aluno");
+        const nota1 = parseInt(prompt("Insira a nota 1;"));
+        const nota2 = parseInt(prompt("Insira a nota 2;"));
+        const nota3 = parseInt(prompt("Insira a nota 3;"));
+        let media = (nota1 + nota2 + nota3) / 3;
+        //O output será em float, pois não foi declarado o tipo de dado, mas o input deve ser inteiro, ou usa-se parseFloat
+        if (media >= 9.5)
+            document.write("Aluno(a) " + aluno + " aprovado com media: " + media + "<br");
+        else
+            document.write("Aluno(a) " + aluno + " reprovado por media<br>")
+
+    </script>
+</body>
+
+</html>

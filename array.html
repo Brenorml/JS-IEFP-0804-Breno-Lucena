@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+</head>
+
+<body>
+    <h1>JavaScript Arrays</h1>
+    <p id="demo"></p>
+    <script>
+        const cars = [];
+        cars[0] = "Saab";
+        cars[1] = "Volvo";
+        cars[2] = "BMW";
+        document.getElementById("demo").innerHTML = cars;
+        cars[0] = 0;
+        cars[1] = "Toyota"; cars[0] += 1;
+        cars[2] = "Honda"; cars[0] += 1;
+        cars[3] = "Subaru"; cars[0] += 1;
+        cars[4] = "Ferrari"; cars[0] += 1;
+        cars[5] = "Peugeot"; cars[0] += 1;
+
+        document.write(cars + '<br><br>');
+
+        const element = [];
+        for (let i = 0; i < 10; i++) {
+            element[i] = i;
+        }
+        document.write(element);
+        document.write('<br><br>');
+
+        const element1 = [];
+        for (let i = 0; i < 20; i++) {
+            element1[i] = i * (2 + 3);
+        }
+        document.write(element1);
+        document.write('<br><br>');
+
+        const element2 = [];
+        let fim = 'F';
+        for (let i = 0; fim != 'S'; i++) {
+            element2[i] = prompt('Insira o nome do aluno: ');
+            fim = prompt('Deseja terminar: (S/N)');
+        }
+        document.write(element2);
+        document.write('<br><br>');
+
+        const element3 = [];
+        const quantNomes = parseInt(prompt('Quantos nomes deseja incluir?'));
+        for (let i = 0; i < quantNomes; i++) {
+            element3[i] = prompt('Insira o nome do aluno: ');
+        }
+        document.write(element3);
+        document.write('<br><br>');
+
+
+        const aluno = [];
+        aluno[0] = ['Breno', 'M', 13.5, 14.9, 18.7];
+        aluno[1] = ['Patrícia', 'F', 12, 15, 20];
+        document.write(aluno);
+    </script>
+</body>
+
+</html>

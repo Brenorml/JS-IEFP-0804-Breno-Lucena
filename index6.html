@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+</head>
+
+<body>
+    <h1>JavaScript Arrays</h1>
+    <p id="demo"></p>
+    <script>
+        const aluno = [];        
+
+        const quantAlunos = parseInt(prompt('Quantos nomes deseja incluir?'));
+        for (let i = 0; i < quantAlunos; i++) {
+            let nome = prompt('Nome do aluno ' + (i + 1) + ':');
+            //let genero = prompt('Genero: (M/F)').toUpperCase();
+            
+            let genero;
+            do{
+                if(genero == null)
+                    genero = prompt("Gênero: (M/F)").toUpperCase();
+                else
+                genero = prompt("Gênero inválido!!! Escolha entre: (M/F) para o  o gênero do aluno(a)").toUpperCase();
+            }while(genero != 'M' && genero != 'F');
+
+            let nota1 = parseFloat(prompt('Nota 1: '));
+            let nota2 = parseFloat(prompt('Nota 2: '));
+            let nota3 = parseFloat(prompt('Nota 3: '));
+            aluno[i] = [nome, genero, nota1, nota2, nota3];
+        }
+        for (let i = 0; i < aluno.length; i++) {
+            document.write('Aluno ' + (i + 1) + ': ' + aluno[i] + '<br><br>');
+        }
+        let count = 0;
+        aluno.forEach(element => {
+            count++;
+            document.write('Aluno número ' + count + '<br>');
+            document.write('Nome: ' + element[0] + '<br>');
+            document.write('Genero: ' + element[1] + '<br>');
+            document.write('Nota 1: ' + element[2] + '<br>');
+            document.write('Nota 2: ' + element[3] + '<br>');
+            document.write('Nota 3: ' + element[4] + '<br>');
+            media = Math.round((element[2] + element[3] + element[4]) / 3);
+            
+            let aprov;
+            if(media < 5){
+                aprov = 'Aproveitamento mau!<br>';            
+            }
+            else if(media < 10){
+                aprov = 'Aproveitamento insuficiente<br>';
+            }
+            else if(media < 15){
+                aprov = 'Aproveitamento suficiente<br>';
+            }
+            else if(media < 18){
+                aprov = 'Aproveitamento bom<br>';
+            }
+            else{
+                aprov = 'Aproveitamento muito bom<br>';
+            
+            }
+
+            document.write('Média: ' + media + '<br>');
+            if(element[1] == 'M'){
+                document.write('Resultado: ' + (media >= 10 ? "aprovado<br>" : "reprovado<br>"));
+                document.write(aprov);
+            }
+            else{
+                document.write('Resultado: ' + (media >= 10 ? "aprovada<br>" : "reprovada<br>"));
+                document.write(aprov);
+            }
+            document.write('<br><br>');
+        });
+    </script>
+</body>
+
+</html>

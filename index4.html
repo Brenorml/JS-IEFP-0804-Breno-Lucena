@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais if/else e ciclos</title>
+</head>
+<body>    
+    <script>
+        let aprov;
+        const aluno = prompt("Insira o nome do aluno");               
+        const nota1 = parseInt(prompt("Insira a nota 1;"));
+        const nota2 = parseInt(prompt("Insira a nota 2;"));
+        const nota3 = parseInt(prompt("Insira a nota 3;"));
+        let media =Math.round((nota1 + nota2 + nota3) / 3);
+
+        document.write("<p>Avaliação qualitativa usando if\'s encadeados sem operadores lógicos</p><br>");
+
+        if(media < 5){
+            aprov = 'aproveitamento mau!<br>';            
+        }
+        else if(media < 10){
+            aprov = 'aproveitamento insuficiente<br>';
+        }
+        else if(media < 15){
+            aprov = 'aproveitamento suficiente<br>';
+        }
+        else if(media < 18){
+            aprov = 'aproveitamento bom<br>';
+        }
+        else{
+            aprov = 'aproveitamento muito bom<br>';
+            
+        }
+        document.write('<h1>O aluno '+aluno+' teve a media '+media+' com '+aprov+'</h1><br>');
+    </script>    
+</body>
+</html>

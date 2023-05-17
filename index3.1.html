@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch em Javascript</title>
+</head>
+<body>
+    <script>
+        const aluno = prompt("Insira o nome do aluno");               
+        const nota1 = parseInt(prompt("Insira a nota 1;"));
+        const nota2 = parseInt(prompt("Insira a nota 2;"));
+        const nota3 = parseInt(prompt("Insira a nota 3;"));
+        let media =Math.round((nota1 + nota2 + nota3) / 3);
+        document.write("<h3>O aluno "+aluno+" obteve: </h3>");
+        if(media == 0 || media < 5){
+            document.write("<h1 style='color:red'>Aproveitamento Mau</h1>");
+            document.write('<img src = "menorQ5.PNG" alt = "MenorQ5"><br>');
+        }
+        else if(media >= 5 && media < 10){
+            document.write("<h1 style='color:orange'>Aproveitamento Insuficiente</h1>");
+            document.write('<img src = "menorQ10.PNG" alt = "MenorQ10"><br>');
+        }
+        else if(media >= 10 && media < 15){
+            document.write("<h1 style='color:blue'>Aproveitamento Suficiente</h1>");
+            document.write('<img src = "menorQ15.PNG" alt = "MenorQ15"><br>');
+        }
+        else if(media >= 15 && media < 18){
+            document.write("<h1 style='color:green'>Aproveitamento Bom</h1>");
+            document.write('<img src = "menorQ18.PNG" alt = "MenorQ18"><br>');
+        }
+        else{
+            document.write("<h1 style='color:lime'>Aproveitamento Muito Bom</h1>");
+            document.write('<img src = "maiorQ18.PNG" alt = "MaiorQ18"><br>');
+        }
+
+        //Switch com fallthrough --> Switch com mais de 1 case por break
+        document.write('<h3>Aproveitamento com switch-case com fallthrough</h3>');
+        switch(media){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                document.write("<h1 style='color:red'>Aproveitamento Mau</h1>");
+                document.write('<img src = "menorQ5.PNG" alt = "MenorQ5"><br>');
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                document.write("<h1 style='color:orange'>Aproveitamento Insuficiente</h1>");
+                document.write('<img src = "menorQ10.PNG" alt = "MenorQ10"><br>');
+                break;
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+                document.write("<h1 style='color:blue'>Aproveitamento Suficiente</h1>");
+                document.write('<img src = "menorQ15.PNG" alt = "MenorQ15"><br>');
+                break;            
+            case 15:
+            case 16:
+            case 17:
+                document.write("<h1 style='color:green'>Aproveitamento Bom</h1>");
+                document.write('<img src = "menorQ18.PNG" alt = "MenorQ18"><br>');
+                break;
+            case 18:
+            case 19:
+            case 20:
+                document.write("<h1 style='color:lime'>Aproveitamento Muito Bom</h1>");
+                document.write('<img src = "maiorQ18.PNG" alt = "MaiorQ18"><br>');
+                break;
+            default:
+                document.write("Média inválida");
+        }
+    </script>
+    
+</body>
+</html>

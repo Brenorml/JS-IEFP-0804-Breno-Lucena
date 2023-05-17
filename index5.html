@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de repetição</title>
+</head>
+<body>    
+    <script>
+        let aprov;
+        let genero;
+        const aluno = prompt("Insira o nome do aluno");  
+        do{
+            genero = prompt("Insira o gênero do aluno(a) - (M/F)").toUpperCase();
+        }while(genero != 'M' && genero != 'F');
+
+        let nota1, nota2, nota3;
+        do{
+            if(nota1 < 0 || nota1 > 20)
+                nota1 = parseFloat(prompt("NOTA INVÁLIDA!!!Insira a nota 1 APENAS utilizando valores entre 0 e 20:"));
+            else
+                nota1 = parseFloat(prompt("Insira a nota 1 (entre 0 e 20):"));
+        }while(nota1 < 0 || nota1 > 20);
+        do{
+            if(nota2 < 0 || nota2 > 20)
+                nota2 = parseFloat(prompt("NOTA INVÁLIDA!!!Insira a nota 2 APENAS utilizando valores entre 0 e 20:"));
+            else
+                nota2 = parseFloat(prompt("Insira a nota 2 (entre 0 e 20):"));
+        }while(nota2 < 0 || nota2 > 20);
+        do{
+            if(nota3 < 0 || nota3 > 20)
+                nota3 = parseFloat(prompt("NOTA INVÁLIDA!!!Insira a nota 3 APENAS utilizando valores entre 0 e 20:"));
+            else
+                nota3 = parseFloat(prompt("Insira a nota 3 (entre 0 e 20):"));
+        }while(nota3 < 0 || nota3 > 20);
+        
+
+        let media =Math.round((nota1 + nota2 + nota3) / 3);
+
+        //document.write("<p>Avaliação qualitativa usando if\'s encadeados sem operadores lógicos</p><br>");
+
+        if(media < 5){
+            aprov = 'aproveitamento mau!<br>';            
+        }
+        else if(media < 10){
+            aprov = 'aproveitamento insuficiente<br>';
+        }
+        else if(media < 15){
+            aprov = 'aproveitamento suficiente<br>';
+        }
+        else if(media < 18){
+            aprov = 'aproveitamento bom<br>';
+        }
+        else{
+            aprov = 'aproveitamento muito bom<br>';
+            
+        }
+
+        if(genero == 'M')
+            document.write('<h1>O aluno '+aluno+' teve a media '+media+' com '+aprov+'</h1><br>');
+        else
+        document.write('<h1>A aluna '+aluno+' teve a media '+media+' com '+aprov+'</h1><br>');
+    </script>    
+</body>
+</html>
